@@ -27,8 +27,6 @@ public class basedButton {
         button.setFocusPainted(false);
         button.setBorderPainted(false);
 
-
-
         button.addActionListener(e -> {
             if (!this.online) {
                 button.setBackground(new Color(0, 255, 40));
@@ -43,4 +41,7 @@ public class basedButton {
         });
 
     }
+
+
+
 }

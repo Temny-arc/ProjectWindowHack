@@ -11,7 +11,7 @@ public class MainMemu {
     private JFrame frame;
 
     public MainMemu() {
-        this.frame = new JFrame("Time to party like is 2023");
+        this.frame = new JFrame("Rules of nature");
     }
 
     public void ShowMenuScreen(){
@@ -30,21 +30,21 @@ public class MainMemu {
         frame.setLayout(new BorderLayout());
 
 
-        JLabel title = new JLabel("Temu Sim"); //
+        JLabel title = new JLabel("Hacking your window"); //
         title.setFont(new Font("SansSerif", Font.BOLD, 30));
         title.setForeground(new Color(250, 245, 230));
         title.setAlignmentX(Component.CENTER_ALIGNMENT); // centres the label horizontally
       //  title.setAlignmentY(Component.CENTER_ALIGNMENT);
 
 
-        JLabel tagline = new JLabel("so you must be the hero what i heeard all about,"); // small subtitle under the title
+        JLabel tagline = new JLabel("we offer you a choice to determine the fate of your computer "); // small subtitle under the title
         tagline.setFont(new Font("SansSerif", Font.PLAIN, 14)); // smaller and not bold
         tagline.setForeground(new Color(140, 195, 110));
         tagline.setAlignmentX(Component.CENTER_ALIGNMENT); // centres it horizontally
 
         javax.swing.JPanel header = new javax.swing.JPanel(); // panel that holds the title area
         header.setLayout(new BoxLayout(header, BoxLayout.Y_AXIS)); // stacks title and tagline vertically
-        header.setBackground(new Color(45, 90, 40));
+        header.setBackground(new Color(0,128,128));
         header.setBorder(BorderFactory.createEmptyBorder(36, 0, 28, 0)); // adds breathing room above and below the text
         header.add(title); // puts the title into the header
         header.add(Box.createVerticalStrut(8)); // adds a small gap between title and tagline
@@ -78,34 +78,43 @@ public class MainMemu {
 
         javax.swing.JPanel centre = new javax.swing.JPanel();
         centre.setLayout(new BoxLayout(centre, BoxLayout.Y_AXIS)); // stacks everything top to bottom
-        centre.setBackground(new Color(252, 245, 220));
-        centre.setBorder(BorderFactory.createEmptyBorder(100, 100, 20, 100)); // padding so things don't touch the edges, or for an idiot it makes edges unacceptable by the buttons
+        centre.setBackground(new Color(255,253,224 ));
+        centre.setBorder(BorderFactory.createEmptyBorder(100, x/4 + x/8, 20,  x/4 + x/8)); // padding so things don't touch the edges, or for an idiot it makes edges unacceptable by the buttons
         centre.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+        ArrayList<JButton> buttons = new ArrayList<>();
 
 
 
-        JButton newGameBtn = new JButton("Start game");
-        basedButton b = new basedButton();
+        for (int i = 0; i < 8; i++) { // number
+            buttons.add(new JButton());
+            pushbutton.startButton(buttons.get(i));
+            buttons.get(i).setText("Placeholder");
+            centre.add(buttons.get(i));
+            centre.add(Box.createVerticalStrut(y/100));
+        }
 
-        pushbutton.startButton(newGameBtn);
-        JButton loadGameBtn = new JButton("load game");
-        JButton quitBtn = new JButton("Exit");
-        pushbutton.startButton(loadGameBtn);
-        pushbutton.startButton(quitBtn);
+        buttons.get(0).setText("CLICK-STOP");
+        buttons.get(1).setText("GUESS WHAT");
+        buttons.get(2).setText("KIDS ARE CRUEL");
+        buttons.get(3).setText("WE WILL SING");
+        buttons.get(4).setText("Text placeholder");
+        buttons.get(5).setText("Text placeholder");
+        buttons.get(6).setText("Text placeholder");
+        buttons.get(7).setText("I give up");
 
-   //     centre.add(description); // adds the description paragraph
-        centre.add(Box.createHorizontalStrut(x/4 -250));
-       centre.add(Box.createVerticalStrut(28)); // gap between description and buttons
-        centre.add(newGameBtn); // first button
-        centre.add(Box.createVerticalStrut(10)); // small gap between buttons
-        centre.add(loadGameBtn); // second button
-        centre.add(Box.createVerticalStrut(10)); // small gap between buttons
-        centre.add(quitBtn); // third button
-        centre.add(Box.createVerticalStrut(y/2));
+
+
+
+
+
+
+
+
+        centre.add(description); // adds the description paragraph
 
         // New Game button Listener
-        newGameBtn.addActionListener(e -> {
+        buttons.getFirst().addActionListener(e -> {
             description.setText("Gleba - Gleba");
 
 
@@ -115,7 +124,7 @@ public class MainMemu {
 
         Toolkit.getDefaultToolkit().getScreenSize().getWidth();
         // Load Game button Listener
-        loadGameBtn.addActionListener(e -> {
+        buttons.get(1).addActionListener(e -> {
             description.setText("Did you know that in Factorio: Space Gleba is the most unique planet?\n" +
                     "00:05 Gleba is a place of nature where everything is alive\n" +
                     "00:09 can rot into spoilage\n" +
@@ -137,7 +146,7 @@ public class MainMemu {
         });
 
         // Quit button listener
-        quitBtn.addActionListener(e -> {
+        buttons.getLast().addActionListener(e -> {
             System.exit(0); // close the entire application immediately
         });
 
