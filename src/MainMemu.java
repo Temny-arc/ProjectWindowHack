@@ -1,5 +1,6 @@
 import ButtonsFun.basedButton;
 import ButtonsFun.pushbutton;
+import Gamemodes.clickstop;
 
 import javax.swing.*;
 import java.awt.*;
@@ -117,7 +118,10 @@ public class MainMemu {
         buttons.getFirst().addActionListener(e -> {
             description.setText("Gleba - Gleba");
 
+            clickstop c = new clickstop();
+            c.engage();
 
+            frame.dispose();
 
 
         });
