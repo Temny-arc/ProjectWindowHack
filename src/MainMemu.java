@@ -115,18 +115,22 @@ public class MainMemu {
         centre.add(description); // adds the description paragraph
 
         // New Game button Listener
-        buttons.getFirst().addActionListener(e -> {
+        buttons.get(0).addActionListener(e -> {
             description.setText("Gleba - Gleba");
 
-            clickstop c = new clickstop();
-            c.engage();
+            try {
+                new clickstop().engage();
+            } catch (InterruptedException ex) {
+                throw new RuntimeException(ex);
+            }
+
 
             frame.dispose();
 
 
         });
 
-        Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+
         // Load Game button Listener
         buttons.get(1).addActionListener(e -> {
             description.setText("Did you know that in Factorio: Space Gleba is the most unique planet?\n" +
