@@ -1,5 +1,7 @@
 package Gamemodes;
 
+import Gamemodes.Load.texts;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,7 +14,7 @@ public class clickstop {
     private JFrame frame; // the backround
     private static int currentframes; // counter of how many frames are in the place at once
     private static ArrayList<ArrayList<Integer>> locs = new ArrayList<>();
-
+    private static ArrayList<texts> texts;
 
 
     public clickstop() {
@@ -31,15 +33,14 @@ public class clickstop {
         frame.setSize(x, y);
         frame.setLayout(new FlowLayout());
     }
-    public void engage() throws InterruptedException {
-
+    public void engage(ArrayList<texts> text,ArrayList<ArrayList<Integer>> loc) throws InterruptedException {
+        texts = text;
+        locs = loc;
         generatePlace();
         initiate();
-        JPanel panel = new JPanel(); // why do i want this, cuz i can, also this is background
-        panel.setLayout(new BorderLayout());
-        panel.setBackground(new Color(200, 100, 20));
+        frame.setBackground(new Color(200, 100, 20));
 
-        frame.add(panel, BorderLayout.CENTER);
+
 
 
 
@@ -70,7 +71,6 @@ public class clickstop {
         }
 
 
-        frame.add(panel);
 
 
 
@@ -140,7 +140,7 @@ public class clickstop {
         if (currentframes <= 20) {
             if (parrent<10) {
 
-                clickstopasset c = new clickstopasset("placeholder", locs.get(rd.nextInt(locs.size())), parrent + 1);
+                clickstopasset c = new clickstopasset("placeholder", locs.get(rd.nextInt(locs.size())), parrent + 1,"Hot Wind Blows");
                 c.reveal();
                 if (((time - starttime) / 1000000) > 5000) {
                     currentframes++;
@@ -170,11 +170,11 @@ public class clickstop {
         int locy = (int) Math.floor(y/300);;
 
 
-        System.out.println("y done");
+
 
         int offsetx = (int) Math.floor(x - 400*locx) /2;
         int offsety = (int) Math.floor(y - 300*locy) /2;
-        System.out.println(locx + "loc x " + locy);
+
         for (int i = 0; i < locx; i++) {
             for (int j = 0; j < locy; j++) {
                 ArrayList<Integer> location = new ArrayList();

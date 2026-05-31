@@ -1,5 +1,8 @@
 package Gamemodes;
 
+import ButtonsFun.basedButton;
+import Gamemodes.Load.questions;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -54,7 +57,7 @@ public class clickstopasset{
     }
 
 
-    public clickstopasset(String title, ArrayList<Integer> arr,int parrentnum){
+    public clickstopasset(String title, ArrayList<Integer> arr, int parrentnum,String text){
         long startTime = System.nanoTime();
         frame = new JFrame(title);
         frame.setLocationRelativeTo(null);
@@ -65,13 +68,15 @@ public class clickstopasset{
 
 
 
+
+
         frame.setSize(300,200);
 
 
 
         frame.setBackground(new Color(80, 60, 38));
 
-        JTextArea yap = new JTextArea("Who the fuck are you?");
+        JTextArea yap = new JTextArea(text);// displays question
         yap.setEditable(false);
 
         yap.setFont(new Font("Serif", Font.PLAIN, 20));

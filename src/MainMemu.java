@@ -1,5 +1,6 @@
 import ButtonsFun.basedButton;
 import ButtonsFun.pushbutton;
+import Gamemodes.Questions;
 import Gamemodes.clickstop;
 
 import javax.swing.*;
@@ -10,13 +11,14 @@ import java.util.ArrayList;
 public class MainMemu {
 
     private JFrame frame;
+    private static Loader l;
 
     public MainMemu() {
         this.frame = new JFrame("Rules of nature");
     }
 
     public void ShowMenuScreen(){
-
+        ArrayList<ArrayList<Integer>> locs = setupTheSpawn();
         int y = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
         int x = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
         System.out.println(x + " text " + y);
@@ -116,16 +118,29 @@ public class MainMemu {
 
         // New Game button Listener
         buttons.get(0).addActionListener(e -> {
-            description.setText("Gleba - Gleba");
 
             try {
-                new clickstop().engage();
+                new clickstop().engage(l.getTexts(),locs);
             } catch (InterruptedException ex) {
                 throw new RuntimeException(ex);
             }
 
 
             frame.dispose();
+
+
+        });
+
+        buttons.get(1).addActionListener(e -> {
+
+            Questions q =  new Questions("Question");
+            q.startQuestion();
+            frame.dispose();
+
+
+
+
+
 
 
         });
@@ -193,6 +208,37 @@ public class MainMemu {
 
 
     }
+
+    public ArrayList<ArrayList<Integer>> setupTheSpawn(){
+
+        l = Loader.load("data.json");
+
+
+        ArrayList<ArrayList<Integer>> locs = new ArrayList<>();
+
+        double y =  Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+        double x =  Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+        int locx = (int) Math.floor(x/400);
+        int locy = (int) Math.floor(y/300);
+
+
+
+
+        int offsetx = (int) Math.floor(x - 400*locx) /2;
+        int offsety = (int) Math.floor(y - 300*locy) /2;
+
+        for (int i = 0; i < locx; i++) {
+            for (int j = 0; j < locy; j++) {
+                ArrayList<Integer> location = new ArrayList();
+                location.add(i*400 +offsetx);
+                location.add(j*300 +offsety);
+                locs.add(location);
+            }
+        }
+        return locs;
+    }
+
+
 
 
 
