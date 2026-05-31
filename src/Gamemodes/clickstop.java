@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 public class clickstop {
@@ -15,6 +16,7 @@ public class clickstop {
     private static int currentframes; // counter of how many frames are in the place at once
     private static ArrayList<ArrayList<Integer>> locs = new ArrayList<>();
     private static ArrayList<texts> texts;
+    private static HashMap<Integer,clickstopasset> closethem = new HashMap<>();
 
 
     public clickstop() {
@@ -63,10 +65,13 @@ public class clickstop {
 */
         frame.setVisible(true);
         int tooMany = 0;
-        ArrayList<clickstopasset> closethem = new ArrayList();
-        for (int i = 0; i < 10; i++) {
-            closethem.add(new clickstopasset("Gleba",i*10,i*1000));
+
+
+        Random rd = new Random();
+        for (int i = 0; i < 3; i++) {
+            closethem.put(i,new clickstopasset("placeholder", locs.get(rd.nextInt(locs.size())), 0,texts.get(rd.nextInt(texts.size())).getOut(),i));
             closethem.get(i).reveal();
+
             currentframes++;
         }
 
@@ -132,27 +137,45 @@ public class clickstop {
      * @param starttime time when was the frame created
      */
 
-    public void addsome(long starttime,int parrent){
+    public void addsome(long starttime,int parrent,int pos){
         Random rd = new Random();
         long time = System.nanoTime();
 
 
-        if (currentframes <= 20) {
+        if (currentframes <= 20 & currentframes >= 1) {
             if (parrent<10) {
 
-                clickstopasset c = new clickstopasset("placeholder", locs.get(rd.nextInt(locs.size())), parrent + 1,"Hot Wind Blows");
-                c.reveal();
+                closethem.put( pos,new clickstopasset("placeholder", locs.get(rd.nextInt(locs.size())), 0,texts.get(rd.nextInt(texts.size())).getOut(),pos));
+                closethem.get(pos).reveal();
                 if (((time - starttime) / 1000000) > 5000) {
                     currentframes++;
-                    clickstopasset d = new clickstopasset("Placeholder", 100, 0);
-                    d.reveal();
+                    for (int i = 0; i < closethem.size(); i++) {
+                        if (!closethem.get(i).isActive()){
+                            clickstopasset d = new clickstopasset("Placeholder",locs.get(rd.nextInt(locs.size())),0,texts.get(rd.nextInt(texts.size())).getOut(),i);
+                            d.reveal();
+                            break;
+                        }
+                    }
+
+
+
 
                 }
             } else {
                 currentframes--;
             }
-        } else if (currentframes <=1) {
+        } else if (currentframes ==0) {
             System.out.println("GG you won");
+            JFrame tFrame = new JFrame("Congratulations!");
+            tFrame.setLayout(new BorderLayout());
+            tFrame.setSize(frame.getWidth(), frame.getHeight());
+            tFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            tFrame.setLocationRelativeTo(null);
+            JTextArea textArea = new JTextArea("Congratulations! you have managed to save your computer");
+            textArea.setEditable(false);
+
+            tFrame.setVisible(true);
+
 
         } else {
             System.out.println("GG you lost");

@@ -10,14 +10,15 @@ import java.util.Random;
 public class Questions {
 
     private JFrame frame;
-    private static int currentframes;
     private static int correct;
     private static int incorrect;
     private static ArrayList<ArrayList<Integer>> locs;
     private static ArrayList<questions> q;
 
-    public Questions(String title) {
+    public Questions(String title,ArrayList<questions> questions,ArrayList<ArrayList<Integer>> loc) {
         frame = new JFrame(title);
+        q = questions;
+        locs = loc;
     }
 
     public Questions(boolean b) {
@@ -29,20 +30,22 @@ public class Questions {
     }
 
 
-    public void startQuestion() {
+    public void startQuestion(int x, int y) {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+        frame.setSize(x,y);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
 
 
 
+
         Random rand = new Random();
         ArrayList<questionasset> closethem = new ArrayList();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 3; i++) {
             closethem.add(new questionasset("Gleba",locs.get(rand.nextInt(locs.size())),q.get(rand.nextInt(q.size()))));
 
-            currentframes++;
+
         }
 
 
@@ -51,24 +54,18 @@ public class Questions {
 
 
     }
-    public void addsome(long starttime,int parrent){
+
+
+    public void addsome(){
         Random rd = new Random();
-        long time = System.nanoTime();
 
-
-        if (currentframes <= 20) {
-            if (parrent<10) {
-
-                currentframes++;
-            } else {
-                currentframes--;
-            }
-        } else if (currentframes <=1) {
-            System.out.println("GG you won");
-
+        if (correct+incorrect<12){
+            questionasset m = new questionasset("Question",locs.get(rd.nextInt(locs.size())),q.get(rd.nextInt(q.size())));
         } else {
-            System.out.println("GG you lost");
+            System.out.println(correct+"Correct "+incorrect +"Incorrect ");
         }
+
+
 
     }
 }

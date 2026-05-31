@@ -57,10 +57,10 @@
       "out": "what have you done"
     }
   ],
-  "Questions" : [
+  "questions" : [
     {
       "id" : "question1",
-      "quest": "what number comes between 2 and 4 Beetlejuice?",
+      "quest": "What is answer to this meme: \nwhat number comes between 2 and 4 Beetlejuice?",
       "ans1": "0",
       "ans2": "1",
       "ans3": "2",
@@ -69,7 +69,7 @@
     },
     {
       "id" : "question2",
-      "quest": "Tax evasion is a crime Vergil!",
+      "quest": "What is answer to this meme: \nTax evasion is a crime Vergil!",
       "ans1": "Yes",
       "ans2": "Plastic chair",
       "ans3": "Its an Obligation!",
@@ -87,7 +87,7 @@
     },
     {
       "id" : "question4",
-      "quest": "Nanomachines son",
+      "quest": "What is answer to this meme: \nNanomachines son",
       "ans1": "They harden response to physical trauma",
       "ans2": "We will get a lot of money",
       "ans3": "Empire of Rising Sun",
@@ -96,7 +96,7 @@
     },
     {
       "id" : "question5",
-      "quest": "Commander you rend on my glorious parade.\n For this Im sending everything i got at you \n But i wont let you have the satisfaction of catching me.",
+      "quest": "What is answer to this meme: \nCommander you rend on my glorious parade.\n For this Im sending everything i got at you \n But i wont let you have the satisfaction of catching me.",
       "ans1": "Yea noob",
       "ans2": "Im escaping to the one place that hasnt been corupted by capilatism... Space!",
       "ans3": "Vladimir Putin reaction:",
@@ -105,7 +105,7 @@
     },
     {
       "id" : "question6",
-      "quest": "Its over Anakin I have the high ground ",
+      "quest": "What is answer to this meme: \nIts over Anakin I have the high ground ",
       "ans1": "You underestimate my power",
       "ans2": "Dont try it",
       "ans3": "Kill him now ",
@@ -114,7 +114,7 @@
     },
     {
       "id" : "question7",
-      "quest": "Hello there",
+      "quest": "Who is author to this meme: \nHello there",
       "ans1": "General Kennobi",
       "ans2": "Yea what",
       "ans3": "Jedi scum",
@@ -132,7 +132,7 @@
     },
     {
       "id" : "question9",
-      "quest": "America is getting bit to peaceful",
+      "quest": "Who is author to this meme: \nAmerica is getting bit to peaceful",
       "ans1": "Mistral",
       "ans2": "Senator",
       "ans3": "Sundowner",
@@ -141,7 +141,7 @@
     },
     {
       "id" : "question10",
-      "quest": "When you kill one its a tragedy, When you kill 10 millions it is statistic",
+      "quest": "Who is author to this meme/quote: \n When you kill one its a tragedy, When you kill 10 millions it is statistic",
       "ans1": "Adolf Hitler",
       "ans2": "Kane",
       "ans3": "Josif Vissarionovič Stalin",
@@ -150,11 +150,11 @@
     },
     {
       "id" : "question11",
-      "quest": "",
-      "ans1": "Adolf Hitler",
-      "ans2": "Kane",
-      "ans3": "Josif Vissarionovič Stalin",
-      "ans4": "Vladimir Putin",
+      "quest": "What is answer to this meme: \n Alright lets go. Leroy Jenkins!!!!",
+      "ans1": "Oh my god he just ran in",
+      "ans2": "Kamikadze",
+      "ans3": "Lets go",
+      "ans4": "Stick to the plan",
       "correct": 4
     }
 

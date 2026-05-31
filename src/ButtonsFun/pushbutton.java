@@ -28,6 +28,24 @@ public class pushbutton {
 
     }
 
+    public static void startbutton(JButton button){
+        button.setBackground(new Color(255, 236, 188));
+        button.setForeground(new Color(66, 167, 213));
+        button.setFont(new Font("Arial",Font.BOLD,40));
+        // button.setIconTextGap(3);
+        button.setFocusPainted(false);
+        button.setBorderPainted(false);
+        button.setMaximumSize(new Dimension(Integer.MAX_VALUE, 25));
+        button.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+
+
+
+
+
+
+    }
+
 
 
 

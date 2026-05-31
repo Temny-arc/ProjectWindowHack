@@ -15,13 +15,13 @@ public class clickstopasset{
     private boolean active;
     private static int delay;
 
-    public clickstopasset(String title, int x, int y){
+    public clickstopasset(String title, int x, int y,int pos){
         long startTime = System.nanoTime();
         frame = new JFrame(title);
         frame.setLocationRelativeTo(null);
         frame.setLocation(x,y);
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-
+        this.active = true;
 
 
 
@@ -39,7 +39,7 @@ public class clickstopasset{
         JButton close = new JButton("Close");
         close.addActionListener(e -> {
             clickstop del = new clickstop();
-            del.addsome(startTime,0);
+            del.addsome(startTime,0,pos);
 
             frame.dispose();
         });
@@ -57,14 +57,14 @@ public class clickstopasset{
     }
 
 
-    public clickstopasset(String title, ArrayList<Integer> arr, int parrentnum,String text){
+    public clickstopasset(String title, ArrayList<Integer> arr, int parrentnum,String text,int pos){
         long startTime = System.nanoTime();
         frame = new JFrame(title);
         frame.setLocationRelativeTo(null);
         Random rd = new Random();
         frame.setLocation(arr.get(0) + rd.nextInt(100)-50,arr.get(1) +rd.nextInt(100)-50);
-        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.active = true;
 
 
 
@@ -84,8 +84,8 @@ public class clickstopasset{
         JButton close = new JButton("Close");
         close.addActionListener(e -> {
             clickstop del = new clickstop();
-            del.addsome(startTime,parrentnum);
-
+            del.addsome(startTime,parrentnum,pos);
+            this.active = false;
             frame.dispose();
         });
 

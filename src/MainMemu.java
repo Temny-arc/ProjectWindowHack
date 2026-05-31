@@ -133,8 +133,8 @@ public class MainMemu {
 
         buttons.get(1).addActionListener(e -> {
 
-            Questions q =  new Questions("Question");
-            q.startQuestion();
+            Questions q =  new Questions("Question",l.getQuestions(),locs);
+            q.startQuestion(x,y);
             frame.dispose();
 
 

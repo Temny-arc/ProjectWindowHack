@@ -9,6 +9,15 @@ public class questions {
     private String ans4;
     private int correct;
 
+    public questions(String id, String quest, String ans1, String ans2, String ans3, String ans4, int correct) {
+        this.id = id;
+        this.quest = quest;
+        this.ans1 = ans1;
+        this.ans2 = ans2;
+        this.ans3 = ans3;
+        this.ans4 = ans4;
+        this.correct = correct;
+    }
 
     /*
     quest": "what number comes between 2 and 4 Beetlejuice?",
@@ -45,5 +54,18 @@ public class questions {
 
     public int getCorrect() {
         return correct;
+    }
+
+    @Override
+    public String toString() {
+        return "questions{" +
+                "id='" + id + '\'' +
+                ", quest='" + quest + '\'' +
+                ", ans1='" + ans1 + '\'' +
+                ", ans2='" + ans2 + '\'' +
+                ", ans3='" + ans3 + '\'' +
+                ", ans4='" + ans4 + '\'' +
+                ", correct=" + correct +
+                '}';
     }
 }

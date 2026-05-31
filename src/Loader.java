@@ -57,4 +57,12 @@ public class Loader {
     public void setQuestions(ArrayList<Gamemodes.Load.questions> questions) {
         this.questions = questions;
     }
+
+    @Override
+    public String toString() {
+        return "Loader{" +
+                "texts=" + texts +
+                ", questions=" + questions +
+                '}';
+    }
 }

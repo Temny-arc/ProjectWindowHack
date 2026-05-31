@@ -17,4 +17,12 @@ public class texts {
                 ", out='" + out + '\'' +
                 '}';
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getOut() {
+        return out;
+    }
 }
