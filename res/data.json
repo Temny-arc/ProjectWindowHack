@@ -155,9 +155,53 @@
       "ans2": "Kamikadze",
       "ans3": "Lets go",
       "ans4": "Stick to the plan",
-      "correct": 4
+      "correct": 1
+    },
+    {
+      "id" : "question12",
+      "quest": "What actor said the quote there is no spoon: ",
+      "ans1": "Thomas Anderson",
+      "ans2": "Samuel L. Jackson",
+      "ans3": "Keanu Reaves",
+      "ans4": "Ewan McGregor",
+      "correct": 1
+    },
+    {
+      "id" : "question13",
+      "quest": "What game character speak this sentence \n Im assuming direct control! ",
+      "ans1": "Harbinger",
+      "ans2": "Collector general",
+      "ans3": "Hackerman",
+      "ans4": "Alt Cunningham",
+      "correct": 1
+    },
+    {
+      "id" : "question14",
+      "quest": "In what series there is a quote: \n Smoke me a kipper, I'll be back for breakfast ",
+      "ans1": "Wicher",
+      "ans2": "Demon Slayer",
+      "ans3": "Red Draft",
+      "ans4": "Masterchef ",
+      "correct": 3
+    },
+    {
+      "id" : "question15",
+      "quest": "What game character speak this sentence \n You look like a cut of f***able meat are you? ",
+      "ans1": "Harbinger",
+      "ans2": "Adam Smasher",
+      "ans3": "Geralt of Rivia",
+      "ans4": "Alt Cunningham",
+      "correct": 2
+    },
+    {
+      "id" : "question16",
+      "quest": "What game character speak this sentence> \n I dreamed for so long\n my flesh wall dull gold and my blood rotted\n corpse after corpse have left in my wake\n as I availed his return  ",
+      "ans1": "Malenia",
+      "ans2": "Mephistopheles",
+      "ans3": "Chronos",
+      "ans4": "Medusa ",
+      "correct": 1
     }
-
   ]
 
 
