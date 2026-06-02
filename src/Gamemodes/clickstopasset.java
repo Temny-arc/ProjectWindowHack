@@ -20,14 +20,18 @@ public class clickstopasset{
         frame = new JFrame(title);
         frame.setLocationRelativeTo(null);
         frame.setLocation(x,y);
+        frame.setLayout(new BorderLayout());
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.active = true;
 
+        JPanel panel = new JPanel();
+
+        panel.setLayout(new BorderLayout());
 
 
         frame.setSize(300,200);
 
-
+        panel.setBackground(new Color(255, 250, 100));
 
         frame.setBackground(new Color(80, 60, 38));
 
@@ -44,10 +48,10 @@ public class clickstopasset{
             frame.dispose();
         });
 
-        frame.add(yap, BorderLayout.CENTER);
+        panel.add(yap, BorderLayout.CENTER);
 
-        frame.add(close, BorderLayout.SOUTH);
-
+        panel.add(close, BorderLayout.SOUTH);
+        frame.add(panel, BorderLayout.CENTER);
         frame.setResizable(false);
 
 
@@ -72,8 +76,9 @@ public class clickstopasset{
 
         frame.setSize(300,200);
 
-
-
+        JPanel panel = new JPanel();
+        panel.setLayout(new BorderLayout());
+        panel.setBackground(new Color(255, 250, 100));
         frame.setBackground(new Color(80, 60, 38));
 
         JTextArea yap = new JTextArea(text);// displays question
@@ -88,10 +93,10 @@ public class clickstopasset{
             this.active = false;
             frame.dispose();
         });
+        panel.add(yap, BorderLayout.CENTER);
 
-        frame.add(yap, BorderLayout.CENTER);
-
-        frame.add(close, BorderLayout.SOUTH);
+        panel.add(close, BorderLayout.SOUTH);
+        frame.add(panel, BorderLayout.CENTER);
 
         frame.setResizable(false);
 

@@ -202,6 +202,131 @@
       "ans4": "Medusa ",
       "correct": 1
     }
+  ],
+  "resolutions":[
+    {
+      "resolution" : "1020x480",
+      "resx" : 1020,
+      "resy" : 480
+    },
+    {
+      "resolution" : "1080x480",
+      "resx" : 1080,
+      "resy" : 480
+    },
+    {
+      "resolution" : "1440x480",
+      "resx" : 1440,
+      "resy" : 480
+    },
+    {
+      "resolution" : "1680x480",
+      "resx" : 1680,
+      "resy" : 480
+    },
+    {
+      "resolution" : "1920x480",
+      "resx" : 1920,
+      "resy" : 480
+    },{
+      "resolution" : "2550x480",
+      "resx" : 2550,
+      "resy" : 480
+    },
+    {
+      "resolution" : "1020x600",
+      "resx" : 1020,
+      "resy" : 600
+    },
+    {
+      "resolution" : "1080x600",
+      "resx" : 1080,
+      "resy" : 600
+    },
+    {
+      "resolution" : "1440x600",
+      "resx" : 1440,
+      "resy" : 600
+    },
+    {
+      "resolution" : "1680x600",
+      "resx" : 1680,
+      "resy" : 600
+    },
+    {
+      "resolution" : "1920x600",
+      "resx" : 1920,
+      "resy" : 600
+    },{
+      "resolution" : "2550x600",
+      "resx" : 2550,
+      "resy" : 600
+    },
+    {
+      "resolution" : "1020x960",
+      "resx" : 1020,
+      "resy" : 960
+    },
+    {
+      "resolution" : "1080x960",
+      "resx" : 1080,
+      "resy" : 960
+    },
+    {
+      "resolution" : "1440x960",
+      "resx" : 1440,
+      "resy" : 960
+    },
+    {
+      "resolution" : "1680x960",
+      "resx" : 1680,
+      "resy" : 960
+    },
+    {
+      "resolution" : "1920x690",
+      "resx" : 1920,
+      "resy" : 960
+    },{
+      "resolution" : "2550x960",
+      "resx" : 2550,
+      "resy" : 960
+    },
+    {
+      "resolution" : "1020x1080",
+      "resx" : 1020,
+      "resy" : 1080
+    },
+    {
+      "resolution" : "1080x1080",
+      "resx" : 1080,
+      "resy" : 1080
+    },
+    {
+      "resolution" : "1440x1080",
+      "resx" : 1440,
+      "resy" : 1080
+    },
+    {
+      "resolution" : "1680x1080",
+      "resx" : 1680,
+      "resy" : 1080
+    },
+    {
+      "resolution" : "1920x1080",
+      "resx" : 1920,
+      "resy" : 1080
+    },{
+      "resolution" : "2550x1080",
+      "resx" : 2550,
+      "resy" : 1080
+    }
+
+
+
+
+
+
+
   ]
 
 

@@ -1,5 +1,6 @@
 import Gamemodes.Load.questions;
 import Gamemodes.Load.texts;
+import Gamemodes.Load.resolutions;
 import com.google.gson.Gson;
 
 import java.io.InputStream;
@@ -11,7 +12,7 @@ public class Loader {
 
     public ArrayList<texts> texts;
     public ArrayList<questions> questions;
-
+    public ArrayList<resolutions> resolutions;
 
 
     public static Loader load(String resourcePath) {
@@ -56,6 +57,14 @@ public class Loader {
 
     public void setQuestions(ArrayList<Gamemodes.Load.questions> questions) {
         this.questions = questions;
+    }
+
+    public ArrayList<Gamemodes.Load.resolutions> getResolutions() {
+        return resolutions;
+    }
+
+    public void setResolutions(ArrayList<Gamemodes.Load.resolutions> resolutions) {
+        this.resolutions = resolutions;
     }
 
     @Override
