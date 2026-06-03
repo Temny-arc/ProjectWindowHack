@@ -30,6 +30,7 @@ public class questionasset {
           textArea.setEditable(false);
           textArea.setFont(new Font("Arial", Font.PLAIN, 22));
           textArea.setLineWrap(true);
+
           textArea.setBackground(new Color(255, 236, 188));
           textArea.setWrapStyleWord(true);
           frame.add(textArea);
@@ -39,13 +40,7 @@ public class questionasset {
 
 
           ans1.addActionListener(e -> {
-               if (q.getCorrect()==1){
-                    Questions quest = new Questions(true);
-                    quest.addsome();
-               } else{
-                    Questions quest = new Questions(false);
-                    quest.addsome();
-               }
+              resolve(1,q);
                frame.dispose();
           });
 
@@ -56,13 +51,7 @@ public class questionasset {
           pushbutton.startbutton(ans2);
 
           ans2.addActionListener(e -> {
-               if (q.getCorrect()==2){
-                    Questions quest = new Questions(true);
-                    quest.addsome();
-               }else{
-                    Questions quest = new Questions(false);
-                    quest.addsome();
-               }
+              resolve(2,q);
                frame.dispose();
 
           });
@@ -71,13 +60,7 @@ public class questionasset {
           pushbutton.startbutton(ans3);
 
           ans3.addActionListener(e -> {
-               if (q.getCorrect()==3){
-                    Questions quest = new Questions(true);
-                    quest.addsome();
-               }else{
-                    Questions quest = new Questions(false);
-                    quest.addsome();
-               }
+              resolve(3,q);
                frame.dispose();
           });
 
@@ -85,14 +68,8 @@ public class questionasset {
           pushbutton.startbutton(ans4);
 
           ans4.addActionListener(e -> {
-               if (q.getCorrect()==4){
-                    Questions quest = new Questions(true);
-                    quest.addsome();
-               }else{
-                    Questions quest = new Questions(false);
-                    quest.addsome();
-               }
-               frame.dispose();
+              resolve(4,q);
+              frame.dispose();
           });
 
 
@@ -108,6 +85,17 @@ public class questionasset {
 
 
           frame.setVisible(true);
+
+     }
+
+     public void resolve(int ans,questions q){
+         if (q.getCorrect()==ans){
+             Questions quest = new Questions(true);
+             quest.addsome();
+         }else{
+             Questions quest = new Questions(false);
+             quest.addsome();
+         }
 
      }
 

@@ -21,7 +21,7 @@ public class MainMemu {
         ArrayList<ArrayList<Integer>> locs = setupTheSpawn();
         int y = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
         int x = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-        System.out.println(x + " text " + y);
+
 
 
 
@@ -94,7 +94,7 @@ public class MainMemu {
             pushbutton.startButton(buttons.get(i));
             buttons.get(i).setText("Placeholder");
             centre.add(buttons.get(i));
-            centre.add(Box.createVerticalStrut(y/100));
+            centre.add(Box.createVerticalStrut(y/50));
         }
 
         buttons.get(0).setText("CLICK-STOP");
@@ -114,7 +114,7 @@ public class MainMemu {
 
 
 
-        centre.add(description); // adds the description paragraph
+      //  centre.add(description); // adds the description paragraph
 
         // New Game button Listener
         buttons.get(0).addActionListener(e -> {

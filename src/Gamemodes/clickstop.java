@@ -145,10 +145,11 @@ public class clickstop {
         if (currentframes <= 20 & currentframes >= 1) {
             if (parrent<10) {
 
-                closethem.put( pos,new clickstopasset("placeholder", locs.get(rd.nextInt(locs.size())), 0,texts.get(rd.nextInt(texts.size())).getOut(),pos));
+                closethem.put( pos,new clickstopasset("placeholder", locs.get(rd.nextInt(locs.size())), parrent,texts.get(rd.nextInt(texts.size())).getOut(),pos));
                 closethem.get(pos).reveal();
                 if (((time - starttime) / 1000000) > 5000) {
                     currentframes++;
+                    //TODO fix or improve this
                     for (int i = 0; i < closethem.size(); i++) {
                         if (!closethem.get(i).isActive()){
                             clickstopasset d = new clickstopasset("Placeholder",locs.get(rd.nextInt(locs.size())),0,texts.get(rd.nextInt(texts.size())).getOut(),i);

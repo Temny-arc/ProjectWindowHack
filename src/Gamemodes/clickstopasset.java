@@ -78,14 +78,16 @@ public class clickstopasset{
 
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
+        panel.setForeground(new Color(120,1,109));
         panel.setBackground(new Color(255, 250, 100));
         frame.setBackground(new Color(80, 60, 38));
-
+        frame.setForeground(new Color(240,2,218));
         JTextArea yap = new JTextArea(text);// displays question
         yap.setEditable(false);
 
-        yap.setFont(new Font("Serif", Font.PLAIN, 20));
 
+        yap.setFont(new Font("Serif", Font.PLAIN, 20));
+        yap.setBackground(new Color(255,250,100));
         JButton close = new JButton("Close");
         close.addActionListener(e -> {
             clickstop del = new clickstop();
