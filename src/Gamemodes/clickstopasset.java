@@ -113,8 +113,16 @@ public class clickstopasset{
         return active;
     }
 
+    public void turnoff(){
+        this.active = false;
+        frame.dispose();
+
+    }
+
+
     public void reveal() {
         frame.setVisible(true);
+        this.active = true;
     }
 
 
