@@ -12,8 +12,8 @@ import java.util.Random;
 
 public class clickstop {
 
-    private JFrame frame; // the backround
-
+    private static JFrame frame; // the backround
+    private static JTextArea textArea = new JTextArea();
     private static ArrayList<ArrayList<Integer>> locs = new ArrayList<>();
     private static ArrayList<texts> texts;
     private static ArrayList<clickstopasset> closethem = new ArrayList<>();
@@ -41,13 +41,18 @@ public class clickstop {
         generatePlace();
         initiate();
         frame.setLayout(new BorderLayout());
-        frame.setBackground(new Color(200, 100, 20));
+        frame.setBackground(new Color(20, 200, 185));
         JPanel panel = new JPanel();
-        panel.setBackground(new Color(200, 100, 20));
+        panel.setBackground(new Color(20, 200, 185));
         panel.setLayout(new BorderLayout());
         frame.add(panel);
 
-
+        JTextArea textArea = new JTextArea();
+        textArea.setEditable(false);
+        textArea.setFont(new Font("Serif", Font.PLAIN, 20));
+        textArea.setBackground(new Color(20, 200, 185));
+        textArea.setForeground(Color.BLACK);
+        panel.add(textArea,BorderLayout.CENTER);
 
 
 
@@ -72,7 +77,7 @@ public class clickstop {
 
 
         Random rd = new Random();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             closethem.add(new clickstopasset("placeholder", locs.get(rd.nextInt(locs.size())), 0, texts.get(rd.nextInt(texts.size())).getOut(), i));
             closethem.get(i).reveal();
 
@@ -136,16 +141,18 @@ public class clickstop {
         Random rd = new Random();
         long time = System.nanoTime();
 
+        System.out.println(parrent);
+        if (parrent < 5) {
 
-        if (parrent < 10) {
-
-            closethem.add(pos, new clickstopasset("placeholder", locs.get(rd.nextInt(locs.size())), parrent, texts.get(rd.nextInt(texts.size())).getOut(), pos));
+            closethem.add(pos, new clickstopasset("placeholder", locs.get(rd.nextInt(locs.size())), parrent+1, texts.get(rd.nextInt(texts.size())).getOut(), pos));
             closethem.get(pos).reveal();
+
+
             if (((time - starttime) / 1000000) > 5000) {
                 int how = 0;
                 //TODO fix or improve this
                 for (int i = 0; i < closethem.size(); i++) {
-                    if (!closethem.get(i).isActive()) { // loop that will break once the new frame is added
+                    if (!closethem.get(i).isActive()) {// loop that will break once the new frame is added
                         closethem.add(i,new clickstopasset("Placeholder", locs.get(rd.nextInt(locs.size())), 0, texts.get(rd.nextInt(texts.size())).getOut(), i));
                         closethem.get(i).reveal();
                         break;
@@ -154,47 +161,46 @@ public class clickstop {
                 }
                 if (how>20){
                     System.out.println("You have lost");
-                    JFrame tFrame = new JFrame("No this is the end!");
-                    tFrame.setLayout(new BorderLayout());
-                    tFrame.setSize(1000,1000);
-                    tFrame.setSize(frame.getWidth(), frame.getHeight());
-                    tFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    tFrame.setLocationRelativeTo(null);
                     JTextArea textArea = new JTextArea("You hava managed to lose all you have now");
                     textArea.setEditable(false);
+                    frame.add(textArea);
                     turnoff();
                 }
 
             }
 
 
-        }
-        int end = 0;
-        for (int i = 0; i < closethem.size(); i++) {
-            if (!closethem.get(i).isActive()) {
-                end++;
+        } else {
+            closethem.get(pos).turnoff();
+            int end = 0;
+            for (int i = 0; i < closethem.size(); i++) {
+                if (closethem.get(i).isActive()) {
+                    end++;
+                }
+            }
+            System.out.println(end);
+            if (end == 0) {
+                System.out.println("GG you won");
+
+                JTextArea textArea = new JTextArea("Congratulations! you have managed to save your computer");
+                textArea.setEditable(false);
+                textArea.setFont(new Font("Serif", Font.PLAIN, 20));
+                textArea.setBackground(new Color(20, 200, 185));
+                textArea.setForeground(Color.BLACK);
+                frame.add(textArea,BorderLayout.CENTER);
+                turnoff();
+
+
             }
         }
-        if (end == 0){
-            System.out.println("GG you won");
-            JFrame tFrame = new JFrame("Congratulations!");
-            tFrame.setLayout(new BorderLayout());
-            tFrame.setSize(frame.getWidth(), frame.getHeight());
-            tFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            tFrame.setLocationRelativeTo(null);
-            JTextArea textArea = new JTextArea("Congratulations! you have managed to save your computer");
-            textArea.setEditable(false);
-
-            tFrame.setVisible(true);
-            turnoff();
-        }
-
 
 
 
 
 
     }
+
+
 
 
 
@@ -228,7 +234,7 @@ public class clickstop {
             closethem.get(i).turnoff();
         }
         
-        this.frame.dispose();
+
     }
 
 
